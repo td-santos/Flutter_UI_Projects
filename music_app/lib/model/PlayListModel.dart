@@ -32,7 +32,7 @@ var listaPlaylist =[
   ),
   PlayListModel(
     "recomendadas", 
-    "love on the brain", 
+    "love on the brain2", 
     "assets/capa_3.jpeg", 
     true
   ),
