@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/components/cardPlayList.dart';
+import 'package:music_app/model/PlayListModel.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -26,6 +28,7 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   _appBar(),
                   _mostPopular(),
+                  _listagemPlayList(),
                 ],
               )),
             Positioned(bottom: 0, left: 0, right: 0, child: _bottomPlayer())
@@ -34,6 +37,22 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  Widget _listagemPlayList(){
+    return SizedBox(
+      height: 270,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: listaPlaylist.length,
+          itemBuilder: (context,index){
+            return CardPlayList(
+              plm: listaPlaylist[index],
+            );
+          }
+        ),
+    );
+  }
+
   Widget _mostPopular(){
     return Column(      
       children: <Widget>[
@@ -51,17 +70,20 @@ class _HomeState extends State<Home> {
                 fontSize: 35,
                 fontWeight: FontWeight.bold
               ),),
-              SizedBox(height: 5,),
+              SizedBox(height: 10,),
               Text("960 playlists",style: TextStyle(
                 color: Colors.white24,
-                fontSize: 13
-              ),)
+                fontSize: 11
+              ),),
+              SizedBox(height: 10,),
+              
             ],
           ),
         )
       ],
     );
   }
+
   Widget _appBar(){
     return Container(
       padding: EdgeInsets.only(left: 10,right: 10,top: 15),
