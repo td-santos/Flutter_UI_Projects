@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/components/cardPlayList.dart';
 import 'package:music_app/components/cardSongs.dart';
 import 'package:music_app/model/PlayListModel.dart';
+import 'package:music_app/screens/Player.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -214,103 +215,110 @@ class _HomeState extends State<Home> {
   }
 
   Widget _bottomPlayer() {
-    return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
-      decoration: BoxDecoration(
-          color: Color(0xff292A3E),
-          borderRadius: BorderRadius.only(topRight: Radius.circular(25))),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  ClipOval(
-                    child: Image.asset(
-                      "assets/foto_1.jpg",
-                      fit: BoxFit.cover,
-                      height: 40,
-                      width: 40,
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) => Player()
+          ));
+      },
+          child: Container(
+        padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
+        decoration: BoxDecoration(
+            color: Color(0xff292A3E),
+            borderRadius: BorderRadius.only(topRight: Radius.circular(25))),
+        child: Column(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    ClipOval(
+                      child: Image.asset(
+                        "assets/foto_1.jpg",
+                        fit: BoxFit.cover,
+                        height: 40,
+                        width: 40,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          "idk",
-                          style: TextStyle(color: Colors.white, fontSize: 13),
-                        ),
-                        SizedBox(
-                          height: 3,
-                        ),
-                        Text(
-                          "let you",
-                          style: TextStyle(color: Colors.white24, fontSize: 11),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.pause,
-                    size: 25,
-                    color: Colors.white,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Icon(
-                      Icons.fast_forward,
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "idk",
+                            style: TextStyle(color: Colors.white, fontSize: 13),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            "let you",
+                            style: TextStyle(color: Colors.white24, fontSize: 11),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.pause,
                       size: 25,
                       color: Colors.white,
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Row(
-            children: <Widget>[
-              Text(
-                "01:30",
-                style: TextStyle(color: Colors.white24, fontSize: 8),
-              ),
-              Expanded(
-                child: Container(
-                  height: 10,
-                  child: SliderTheme(
-                    data: SliderTheme.of(context).copyWith(
-                        thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 0.0)),
-                    child: Slider(
-                        activeColor: Colors.white,
-                        inactiveColor: Color(0xff1E1F31),
-                        min: 0,
-                        max: 245,
-                        value: valueSlide,
-                        onChanged: (value) {
-                          setState(() {
-                            valueSlide = value;
-                          });
-                        }),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15),
+                      child: Icon(
+                        Icons.fast_forward,
+                        size: 25,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: <Widget>[
+                Text(
+                  "01:30",
+                  style: TextStyle(color: Colors.white24, fontSize: 8),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 10,
+                    child: SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                          thumbShape:
+                              RoundSliderThumbShape(enabledThumbRadius: 0.0)),
+                      child: Slider(
+                          activeColor: Colors.white,
+                          inactiveColor: Color(0xff1E1F31),
+                          min: 0,
+                          max: 245,
+                          value: valueSlide,
+                          onChanged: (value) {
+                            setState(() {
+                              valueSlide = value;
+                            });
+                          }),
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                "02:45",
-                style: TextStyle(color: Colors.white24, fontSize: 8),
-              ),
-            ],
-          )
-        ],
+                Text(
+                  "02:45",
+                  style: TextStyle(color: Colors.white24, fontSize: 8),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
