@@ -25,7 +25,7 @@ class _PlayerState extends State<Player> {
                 fit: BoxFit.cover,
               )),
           Positioned(top: 30, left: 0, right: 0, child: _appBar()),
-          Positioned(bottom: 20, left: 0, right: 0, child: _player())
+          Positioned(bottom: 30, left: 0, right: 0, child: _player())
         ],
       ),
     );
@@ -38,7 +38,7 @@ class _PlayerState extends State<Player> {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Container(
-            height: 220,
+            height: 225,
             decoration: BoxDecoration(
                 color: Colors.white10, borderRadius: BorderRadius.circular(17)),
             padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
@@ -103,7 +103,8 @@ class _PlayerState extends State<Player> {
                           }),
                     ),
                   ),
-                ),                
+                ), 
+                SizedBox(height: 5,),               
                 Padding(
                   padding: EdgeInsets.only(left: 23, right: 23),
                   child: Row(
@@ -111,11 +112,11 @@ class _PlayerState extends State<Player> {
                     children: <Widget>[
                       Text(
                         "01:30",
-                        style: TextStyle(color: Colors.white24, fontSize: 8),
+                        style: TextStyle(color: Colors.white24, fontSize: 10),
                       ),
                       Text(
                         "02:45",
-                        style: TextStyle(color: Colors.white24, fontSize: 8),
+                        style: TextStyle(color: Colors.white24, fontSize: 10),
                       ),
                     ],
                   ),
@@ -125,23 +126,23 @@ class _PlayerState extends State<Player> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.skip_previous, color: Colors.white,), 
+                      icon: Icon(Icons.skip_previous, color: Colors.white,size: 30,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.fast_rewind, color: Colors.white,), 
+                      icon: Icon(Icons.fast_rewind, color: Colors.white,size: 30,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.pause, color: Colors.white,), 
+                      icon: Icon(Icons.pause, color: Colors.white,size: 30,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.fast_forward, color: Colors.white,), 
+                      icon: Icon(Icons.fast_forward, color: Colors.white,size: 30,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.skip_next, color: Colors.white,), 
+                      icon: Icon(Icons.skip_next, color: Colors.white,size: 30,), 
                       onPressed: (){}
                     ),
                   ],

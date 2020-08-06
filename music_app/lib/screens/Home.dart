@@ -14,6 +14,7 @@ class _HomeState extends State<Home> {
   double valueSlide = 130;
   String songName = "";
   String artist = "";
+  String image = "";
   
   @override
   void initState() {
@@ -21,6 +22,7 @@ class _HomeState extends State<Home> {
     super.initState();
     songName = listaPlaylist[0].songCapa;
     artist = listaPlaylist[0].playListName;
+    image = listaPlaylist[0].urlImage;
   }
 
   @override
@@ -92,7 +94,8 @@ class _HomeState extends State<Home> {
                   onTap: (){
                     setState(() {
                       songName = listaPlaylist[index].songCapa;   
-                      artist = listaPlaylist[index].playListName;                    
+                      artist = listaPlaylist[index].playListName;  
+                      image =  listaPlaylist[index].urlImage;                   
                     });
                   },
                     child: CardSongs(
@@ -235,7 +238,7 @@ class _HomeState extends State<Home> {
                   children: <Widget>[
                     ClipOval(
                       child: Image.asset(
-                        "assets/foto_1.jpg",
+                        image =="" ?"assets/foto_1.jpg" : image,
                         fit: BoxFit.cover,
                         height: 40,
                         width: 40,
@@ -247,14 +250,14 @@ class _HomeState extends State<Home> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "idk",
+                            songName == "" ?"let you" : songName,                            
                             style: TextStyle(color: Colors.white, fontSize: 13),
                           ),
                           SizedBox(
                             height: 3,
                           ),
                           Text(
-                            "let you",
+                            artist == "" ? "idk" : artist,
                             style: TextStyle(color: Colors.white24, fontSize: 11),
                           )
                         ],
