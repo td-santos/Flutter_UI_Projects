@@ -221,7 +221,11 @@ class _HomeState extends State<Home> {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(
-          builder: (context) => Player()
+          builder: (context) => Player(
+            songName: songName,
+            playListName: artist,
+            urlPhoto: image,
+          )
           ));
       },
           child: Container(

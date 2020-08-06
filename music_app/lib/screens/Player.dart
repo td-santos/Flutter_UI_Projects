@@ -3,6 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Player extends StatefulWidget {
+
+  final String urlPhoto;
+  final String songName;
+  final String playListName;
+
+  const Player({Key key, this.urlPhoto, this.songName, this.playListName}) : super(key: key);
   @override
   _PlayerState createState() => _PlayerState();
 }
@@ -21,7 +27,8 @@ class _PlayerState extends State<Player> {
               height: height,
               width: width,
               child: Image.asset(
-                "assets/capa_5.jpg",
+                //"assets/capa_5.jpg",
+                widget.urlPhoto,
                 fit: BoxFit.cover,
               )),
           Positioned(top: 30, left: 0, right: 0, child: _appBar()),
@@ -52,7 +59,8 @@ class _PlayerState extends State<Player> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "like it doens't hurt",
+                          //"like it doens't hurt",
+                          widget.songName,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17,
@@ -63,7 +71,8 @@ class _PlayerState extends State<Player> {
                           height: 3,
                         ),
                         Text(
-                          "chris shelet",
+                          //"chris shelet",
+                          widget.playListName,
                           style: TextStyle(
                               color: Colors.white30,
                               letterSpacing: 1,
