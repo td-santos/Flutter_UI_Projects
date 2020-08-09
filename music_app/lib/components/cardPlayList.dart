@@ -25,13 +25,14 @@ class _CardPlayListState extends State<CardPlayList> {
   
   @override
   Widget build(BuildContext context) {
-
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(left: 10,bottom: 10,top: 10),
       child: Container(
         //color: Colors.white,
         //height: 100,
-        width: 200,
+        width: width * 0.57,//200,
         child: Stack(
           children: <Widget>[            
             Container(
@@ -51,15 +52,15 @@ class _CardPlayListState extends State<CardPlayList> {
                 child: Image.asset(
                   widget.plm.urlImage,
                   fit: BoxFit.cover,
-                  width: 180,
-                  height: 260,
+                  width: width * 0.50,//180,
+                  height: height * 0.34,//260,
                 ),
               ),
             ),
             
             Positioned(
-              top: 25,
-              right: 5,
+              top: height * 0.04,//25,
+              right: width * 0.01,//5,
               child: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -67,8 +68,8 @@ class _CardPlayListState extends State<CardPlayList> {
                   });
                 },
                 child: Container(
-                  height: 35,
-                  width: 35,
+                  height: width * 0.11,//35,
+                  width: width * 0.11,
                   decoration: BoxDecoration(
                     color: added != true ? Color(0xffFF2842) : Colors.white,
                     borderRadius: BorderRadius.circular(50),
@@ -83,19 +84,27 @@ class _CardPlayListState extends State<CardPlayList> {
               )
             ),
             Positioned(
-                bottom: 20,
-                left: 10,
+                bottom: height * 0.03,//20,
+                left: width * 0.03,//10,
                 right: 0,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
                       widget.plm.playListName,
-                      style: TextStyle(color: Colors.white, fontSize: 12,fontWeight: FontWeight.bold, letterSpacing: 1),
+                      style: TextStyle(
+                        color: Colors.white, 
+                        fontSize: width * 0.035,//12,
+                        fontWeight: FontWeight.bold, 
+                        letterSpacing: 1,
+                      ),
                     ),
                     Text(
                       widget.plm.songCapa,
-                      style: TextStyle(color: Colors.white54, fontSize: 10),
+                      style: TextStyle(
+                        color: Colors.white60, 
+                        fontSize: width * 0.025,//10,
+                      ),
                     )
                   ],
                 ))

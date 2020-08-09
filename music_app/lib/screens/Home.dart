@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
   String artist = "";
   String image = "";
   
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -38,7 +39,7 @@ class _HomeState extends State<Home> {
         child: Stack(
           children: <Widget>[
             Positioned(
-                top: 30,
+                top: 40,
                 left: 0,
                 right: 0,
                 child: Column(
@@ -58,11 +59,13 @@ class _HomeState extends State<Home> {
   }
 
   Widget _newReleases() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: 15, top: 10),
+          padding: EdgeInsets.only(left: 15, top: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -71,11 +74,13 @@ class _HomeState extends State<Home> {
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: width * 0.05,//20,
+                    ),
               ),
+              SizedBox(height: 3),
               Text(
                 "3456 songs",
-                style: TextStyle(color: Colors.white24, fontSize: 10),
+                style: TextStyle(color: Colors.white30, fontSize: width * 0.03),
               ),
             ],
           ),
@@ -125,8 +130,10 @@ class _HomeState extends State<Home> {
   }
 
   Widget _listagemPlayList() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: 270,
+      height: height * 0.37,//270,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: listaPlaylist.length,
@@ -139,6 +146,8 @@ class _HomeState extends State<Home> {
   }
 
   Widget _mostPopular() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
         Padding(
@@ -150,25 +159,25 @@ class _HomeState extends State<Home> {
                 "most",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 35,
+                    fontSize: width * 0.09,//35,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 "popular",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 35,
+                    fontSize: width * 0.09,//35,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
               Text(
                 "960 playlists",
-                style: TextStyle(color: Colors.white24, fontSize: 11),
+                style: TextStyle(color: Colors.white30, fontSize: 11),
               ),
               SizedBox(
-                height: 10,
+                height: 15,
               ),
             ],
           ),
@@ -178,6 +187,8 @@ class _HomeState extends State<Home> {
   }
 
   Widget _appBar() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
       padding: EdgeInsets.only(left: 10, right: 10, top: 15),
       child: Row(
@@ -195,11 +206,17 @@ class _HomeState extends State<Home> {
                   Text(
                     "Hello, Yana",
                     style: TextStyle(
-                        letterSpacing: 1, color: Colors.white, fontSize: 13),
+                        letterSpacing: 1, 
+                        color: Colors.white, 
+                        fontSize: width * 0.04,//13,
+                      ),
                   ),
                   Text(
                     "New york",
-                    style: TextStyle(color: Colors.white24, fontSize: 8),
+                    style: TextStyle(
+                      color: Colors.white24, 
+                      fontSize: width * 0.025,//8,
+                    ),
                   )
                 ],
               ),
@@ -218,6 +235,8 @@ class _HomeState extends State<Home> {
   }
 
   Widget _bottomPlayer() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(
@@ -229,7 +248,7 @@ class _HomeState extends State<Home> {
           ));
       },
           child: Container(
-        padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 20),
+        padding: EdgeInsets.only(left: width * 0.03, right: width * 0.03, top: width * 0.045, bottom: width * 0.07),
         decoration: BoxDecoration(
             color: Color(0xff292A3E),
             borderRadius: BorderRadius.only(topRight: Radius.circular(25))),
@@ -244,8 +263,8 @@ class _HomeState extends State<Home> {
                       child: Image.asset(
                         image =="" ?"assets/foto_1.jpg" : image,
                         fit: BoxFit.cover,
-                        height: 40,
-                        width: 40,
+                        height: width * 0.12,
+                        width: width * 0.12,
                       ),
                     ),
                     Padding(
@@ -255,14 +274,14 @@ class _HomeState extends State<Home> {
                         children: <Widget>[
                           Text(
                             songName == "" ?"let you" : songName,                            
-                            style: TextStyle(color: Colors.white, fontSize: 13),
+                            style: TextStyle(color: Colors.white, fontSize: width * 0.04),
                           ),
                           SizedBox(
                             height: 3,
                           ),
                           Text(
                             artist == "" ? "idk" : artist,
-                            style: TextStyle(color: Colors.white24, fontSize: 11),
+                            style: TextStyle(color: Colors.white24, fontSize: width * 0.03),
                           )
                         ],
                       ),
@@ -295,7 +314,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Text(
                   "01:30",
-                  style: TextStyle(color: Colors.white24, fontSize: 8),
+                  style: TextStyle(color: Colors.white38, fontSize: 8),
                 ),
                 Expanded(
                   child: Container(
@@ -320,7 +339,7 @@ class _HomeState extends State<Home> {
                 ),
                 Text(
                   "02:45",
-                  style: TextStyle(color: Colors.white24, fontSize: 8),
+                  style: TextStyle(color: Colors.white, fontSize: 8),
                 ),
               ],
             )
