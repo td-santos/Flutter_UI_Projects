@@ -45,7 +45,7 @@ class _PlayerState extends State<Player> {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Container(
-            height: 225,
+            //height: 235,
             decoration: BoxDecoration(
                 color: Colors.white10, borderRadius: BorderRadius.circular(17)),
             padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
@@ -90,15 +90,15 @@ class _PlayerState extends State<Player> {
                   height: 25,
                 ),
                 
-                Flexible(
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    //color: Colors.blue,
-                    height: 10,
+                Container(
+                  child: Container(    
+                    height: 10,                
                     child: SliderTheme(
                       data: SliderTheme.of(context).copyWith(
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 0.0)),
+                          thumbShape:RoundSliderThumbShape(enabledThumbRadius: 0.0),
+                          trackHeight: 3.5,
+                          ),
+
                       child: Slider(
                           activeColor: Color(0xffFF2842),
                           inactiveColor: Colors.white30,
