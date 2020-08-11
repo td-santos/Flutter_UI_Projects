@@ -175,8 +175,10 @@ class _PlayerState extends State<Player> {
   }
 
   Widget _appBar() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 0),
+      padding: EdgeInsets.only(left: 10, right: 10, top: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -195,11 +197,11 @@ class _PlayerState extends State<Player> {
                   Text(
                     "Hello, Yana",
                     style: TextStyle(
-                        letterSpacing: 1, color: Colors.white, fontSize: 13),
+                        letterSpacing: 1, color: Colors.white, fontSize: width * 0.04),
                   ),
                   Text(
                     "New york",
-                    style: TextStyle(color: Colors.white24, fontSize: 8),
+                    style: TextStyle(color: Colors.white24, fontSize: width * 0.025),
                   )
                 ],
               ),
