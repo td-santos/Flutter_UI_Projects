@@ -88,28 +88,31 @@ class _HomeState extends State<Home> {
         SizedBox(
           height: 10,
         ),
-        SizedBox(
-          height: 90,
-          child: ListView.builder(
-              controller: _scrollController,
-              scrollDirection: Axis.horizontal,
-              itemCount: listaPlaylist.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: (){
-                    setState(() {
-                      songName = listaPlaylist[index].songCapa;   
-                      artist = listaPlaylist[index].playListName;  
-                      image =  listaPlaylist[index].urlImage;                   
-                    });
-                  },
-                    child: CardSongs(
-                      plm: listaPlaylist[index],
-                      cor: songName == listaPlaylist[index].songCapa ? Colors.red : Color(0xff292A3E),
-                    ),
-                );
-                
-              }),
+        Padding(
+          padding: EdgeInsets.only(left: 10),
+          child: SizedBox(
+            height: 90,
+            child: ListView.builder(
+                controller: _scrollController,
+                scrollDirection: Axis.horizontal,
+                itemCount: listaPlaylist.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        songName = listaPlaylist[index].songCapa;   
+                        artist = listaPlaylist[index].playListName;  
+                        image =  listaPlaylist[index].urlImage;                   
+                      });
+                    },
+                      child: CardSongs(
+                        plm: listaPlaylist[index],
+                        cor: songName == listaPlaylist[index].songCapa ? Colors.red : Color(0xff292A3E),
+                      ),
+                  );
+                  
+                }),
+          ),
         ),
         SizedBox(height: 5,),
         Container(

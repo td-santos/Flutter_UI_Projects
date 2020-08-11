@@ -39,6 +39,8 @@ class _PlayerState extends State<Player> {
   }
 
   Widget _player() {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(left: 20, right: 20),
       child: ClipRect(
@@ -63,7 +65,7 @@ class _PlayerState extends State<Player> {
                           widget.songName,
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 17,
+                              fontSize: width * 0.045,//17,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1),
                         ),
@@ -76,13 +78,14 @@ class _PlayerState extends State<Player> {
                           style: TextStyle(
                               color: Colors.white30,
                               letterSpacing: 1,
-                              fontSize: 12),
+                              fontSize: width * 0.03,//12,
+                              ),
                         ),
                       ],
                     ),
                     Icon(
                       Icons.add,
-                      color: Colors.white30,
+                      color: Colors.white54,size: width * 0.065,
                     )
                   ],
                 ),
@@ -121,11 +124,11 @@ class _PlayerState extends State<Player> {
                     children: <Widget>[
                       Text(
                         "01:30",
-                        style: TextStyle(color: Colors.white24, fontSize: 10),
+                        style: TextStyle(color: Colors.white70, fontSize: width * 0.027),
                       ),
                       Text(
                         "02:45",
-                        style: TextStyle(color: Colors.white24, fontSize: 10),
+                        style: TextStyle(color: Colors.white70, fontSize: width * 0.027),
                       ),
                     ],
                   ),
@@ -135,23 +138,23 @@ class _PlayerState extends State<Player> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.skip_previous, color: Colors.white,size: 30,), 
+                      icon: Icon(Icons.skip_previous, color: Colors.white,size: width * 0.08,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.fast_rewind, color: Colors.white,size: 30,), 
+                      icon: Icon(Icons.fast_rewind, color: Colors.white,size: width * 0.08,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.pause, color: Colors.white,size: 30,), 
+                      icon: Icon(Icons.pause, color: Colors.white,size: width * 0.08,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.fast_forward, color: Colors.white,size: 30,), 
+                      icon: Icon(Icons.fast_forward, color: Colors.white,size: width * 0.08,), 
                       onPressed: (){}
                     ),
                     IconButton(
-                      icon: Icon(Icons.skip_next, color: Colors.white,size: 30,), 
+                      icon: Icon(Icons.skip_next, color: Colors.white,size: width * 0.08,), 
                       onPressed: (){}
                     ),
                   ],
@@ -160,9 +163,9 @@ class _PlayerState extends State<Player> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Icon(Icons.refresh, color: Colors.white30,), 
+                    Icon(Icons.refresh, color: Colors.white30,size: width * 0.065,), 
                      
-                    Icon(Icons.swap_horiz, color: Colors.white30,), 
+                    Icon(Icons.swap_horiz, color: Colors.white30,size: width * 0.065,), 
                       
                   ],
                 )

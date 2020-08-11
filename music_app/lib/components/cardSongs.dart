@@ -17,15 +17,17 @@ class _CardSongsState extends State<CardSongs> {
   bool clicado = false;
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
         Container(
           padding: EdgeInsets.all(5),
-          width: 70,
+          width: width * 0.18,//70,
           child: ClipOval(
             child: Image.asset(
               widget.plm.urlImage,
-              height: 60,
+              height: width * 0.16,//60,
               fit: BoxFit.cover,
             ),
           ),
@@ -34,7 +36,7 @@ class _CardSongsState extends State<CardSongs> {
         AnimatedContainer(
             duration: Duration(milliseconds: 200),
             height: 2,
-            width: 70,
+            width: width * 0.18,//70,
             color:
                 widget.cor //clicado == true ? Colors.red : Color(0xff292A3E),
             )
