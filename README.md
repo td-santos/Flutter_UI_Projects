@@ -1,14 +1,12 @@
 # Flutter_UI_Projects
 
+Repositório para compartilhamento de Uis em Flutter !
+
 <br><br>
-## Music App UI
 
-
-
-<div align="left"> 
+|Music App|
+|:-:|
+|<div align="left"><img src="music_app/prints/print_1.png">   <img src="music_app/prints/print_2.png"></div>|
  
- <img  width="150" height="300" src="music_app/prints/print_1.png"><span style="padding-left:2px"></span>
- <img  width="150" height="300" src="music_app/prints/print_2.png"><span style="padding-left:2px"></span> 
  
-</div>
  
