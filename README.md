@@ -6,7 +6,7 @@ Repositório para compartilhamento de Uis em Flutter !
 
 |Music App|
 |:-:|
-|<div align="left"><img src="music_app/prints/print_1.png">   <img src="music_app/prints/print_2.png"></div>|
+|<div align="left"><img width="210" height="420" src="music_app/prints/print_1.png">   <img width="210" height="420"  src="music_app/prints/print_2.png"></div>|
  
  
  
