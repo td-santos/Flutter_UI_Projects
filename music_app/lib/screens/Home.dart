@@ -115,14 +115,14 @@ class _HomeState extends State<Home> {
                 }),
           ),
         ),
-        SizedBox(height: 5,),
+        SizedBox(height: 10,),
         Container(
           width: MediaQuery.of(context).size.width,
           child: Center(
             child: Column(
               children: <Widget>[
-                Text(songName,style: TextStyle(color: Colors.white),),
-                Text(artist,style: TextStyle(color: Colors.white38,fontSize: 10),)
+                Text(songName,style: TextStyle(color: Colors.white,fontSize: width * 0.04,),),
+                Text(artist,style: TextStyle(color: Colors.white38,fontSize: width * 0.025,),)
               ],
             ),
           ),
