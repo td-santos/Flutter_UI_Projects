@@ -50,4 +50,51 @@ var listaPlaylist =[
     "assets/capa_7.jpg", 
     false
   ),
+
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_8.jpeg", 
+    true
+  ),
+
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_9.jpg", 
+    false
+  ),
+
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_10.jpg", 
+    false
+  ),
+
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_11.png", 
+    false
+  ),
+
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_12.jpg", 
+    false
+  ),
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_13.jpg", 
+    false
+  ),
+  PlayListModel(
+    "folk musics", 
+    "Slavic Lands", 
+    "assets/capa_14.jpg", 
+    false
+  ),
 ];

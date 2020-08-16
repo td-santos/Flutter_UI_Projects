@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/components/cardPlayList.dart';
 import 'package:music_app/components/cardSongs.dart';
 import 'package:music_app/model/PlayListModel.dart';
+import 'package:music_app/model/SongModel.dart';
 import 'package:music_app/screens/Player.dart';
 
 class Home extends StatefulWidget {
@@ -21,9 +22,9 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    songName = listaPlaylist[0].songCapa;
-    artist = listaPlaylist[0].playListName;
-    image = listaPlaylist[0].urlImage;
+    songName = listSongs[0].song;
+    artist = listSongs[0].artist;
+    image = listSongs[0].urlImage;
   }
 
   @override
@@ -95,19 +96,19 @@ class _HomeState extends State<Home> {
             child: ListView.builder(
                 controller: _scrollController,
                 scrollDirection: Axis.horizontal,
-                itemCount: listaPlaylist.length,
+                itemCount: listSongs.length,//listaPlaylist.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: (){
                       setState(() {
-                        songName = listaPlaylist[index].songCapa;   
-                        artist = listaPlaylist[index].playListName;  
-                        image =  listaPlaylist[index].urlImage;                   
+                        songName = listSongs[index].song;   
+                        artist = listSongs[index].artist;  
+                        image =  listSongs[index].urlImage;                   
                       });
                     },
                       child: CardSongs(
-                        plm: listaPlaylist[index],
-                        cor: songName == listaPlaylist[index].songCapa ? Colors.red : Color(0xff292A3E),
+                        song: listSongs[index],
+                        cor: songName == listSongs[index].song ? Colors.red : Color(0xff292A3E),
                       ),
                   );
                   

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/model/PlayListModel.dart';
+import 'package:music_app/model/SongModel.dart';
 import 'package:music_app/screens/Home.dart';
 
 class CardSongs extends StatefulWidget {
-  final PlayListModel plm;
+  final SongModel song;
   final bool click;
   final Color cor;
 
-  const CardSongs({Key key, this.plm, this.click, this.cor}) : super(key: key);
+  const CardSongs({Key key, this.song, this.click, this.cor}) : super(key: key);
 
   @override
   _CardSongsState createState() => _CardSongsState();
@@ -26,7 +27,7 @@ class _CardSongsState extends State<CardSongs> {
           width: width * 0.18,//70,
           child: ClipOval(
             child: Image.asset(
-              widget.plm.urlImage,
+              widget.song.urlImage,
               height: width * 0.16,//60,
               fit: BoxFit.cover,
             ),

@@ -54,6 +54,13 @@ flutter:
     - assets/capa_5.jpg
     - assets/capa_6.jpg
     - assets/capa_7.jpg
+    - assets/capa_8.jpeg
+    - assets/capa_9.jpg
+    - assets/capa_10.jpg
+    - assets/capa_11.png
+    - assets/capa_12.jpg
+    - assets/capa_13.jpg
+    - assets/capa_14.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
