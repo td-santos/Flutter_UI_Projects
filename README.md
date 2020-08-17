@@ -1,7 +1,7 @@
 # Flutter_UI_Projects :fire:
 
 Criei este repositório para me desafiar a criar Uis em Flutter :exclamation: <br>
-e de quebra compartilho o coigo fonte para quem se interessar :satisfied:
+e de quebra compartilho o codigo fonte para quem se interessar :satisfied:
 
 Se curtiu a ideia e os projetos, deixe uma :star: que ficarei bastante agradecido :v::smile:
 <br><br>
