@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/views/home_page/components/itemUserList.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,7 +24,8 @@ class _HomePageState extends State<HomePage> {
                 size: 25,
               ),
             ),
-            Text('portrait',
+            Text(
+              'portrait',
               style: TextStyle(
                   color: Colors.pink[400],
                   fontSize: 25,
@@ -46,7 +48,34 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Container(),
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                height: MediaQuery.of(context).size.height - 120,
+                width: 80,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(17)),
+                child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (context, index) {
+                      return ItemUserList(
+                        userName: 'Papa Fddddd',
+                        userImage:
+                            'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
+                      );
+                    }),
+              ),
+            ),
+            
+          ],
+        ),
+      ),
     );
   }
 }
