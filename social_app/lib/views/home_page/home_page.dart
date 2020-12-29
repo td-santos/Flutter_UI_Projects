@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/views/home_page/components/itemPostList.dart';
 import 'package:social_app/views/home_page/components/itemUserList.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,9 +11,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey[200],
         elevation: 0,
         title: Row(
           children: [
@@ -65,14 +66,31 @@ class _HomePageState extends State<HomePage> {
                     itemCount: 20,
                     itemBuilder: (context, index) {
                       return ItemUserList(
-                        userName: 'Papa Fddddd',
+                        userName: 'Papa F',
                         userImage:
                             'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
                       );
                     }),
               ),
             ),
-            
+            Padding(
+              padding: EdgeInsets.only(right: 20, top: 20),
+              child: Expanded(
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 140,
+                  height: MediaQuery.of(context).size.height,
+                  child: ListView.builder(
+                      itemCount: 20,
+                      itemBuilder: (context, index) {
+                        return ItemPostList(
+                          userName: 'Papa F',
+                          userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
+                          postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
+                        );
+                      }),
+                ),
+              ),
+            )
           ],
         ),
       ),

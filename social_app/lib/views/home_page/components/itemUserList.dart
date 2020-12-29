@@ -24,7 +24,7 @@ class ItemUserList extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5),
-        Text('${userName}',textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,maxLines: 1,)
+        Text('${userName}',textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),)
       ],
     );
   }
