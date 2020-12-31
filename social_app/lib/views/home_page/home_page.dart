@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/models/user_model.dart';
 import 'package:social_app/views/home_page/components/itemPostList.dart';
 import 'package:social_app/views/home_page/components/itemUserList.dart';
 
@@ -8,8 +9,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  UserModel userModel = UserModel();
+  
   @override
   Widget build(BuildContext context) {
+
+    List<UserModel> listaUsers = userModel.listUser();
+
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -63,12 +70,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(17)),
                 child: ListView.builder(
-                    itemCount: 20,
+                    itemCount: listaUsers.length, //20,
                     itemBuilder: (context, index) {
+                      userModel = listaUsers[index];
                       return ItemUserList(
-                        userName: 'Papa F',
-                        userImage:
-                            'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
+                        userName: userModel.userFirstName, //'Papa F',
+                        userImage: userModel.urlPhoto//'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
                       );
                     }),
               ),
