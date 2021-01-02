@@ -28,13 +28,13 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: EdgeInsets.only(right: 10, top: 5),
               child: Icon(
-                Icons.grain,
-                color: Colors.indigo,
+                Icons.bookmark_border,
+                color: Colors.pink[700],
                 size: 25,
               ),
             ),
             Text(
-              'portrait',
+              'photopost',
               style: TextStyle(
                   color: Colors.pink[400],
                   fontSize: 25,
