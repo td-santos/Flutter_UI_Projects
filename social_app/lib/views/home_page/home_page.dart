@@ -95,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                           userName: postModel.userModel.userFirstName,
                           userImage: postModel.userModel.urlPhoto,
                           postImage: postModel.imagePost,
+                          liked: postModel.liked,
                           //userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
                           //postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
                         );

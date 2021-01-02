@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 
-class ItemPostList extends StatelessWidget {
+class ItemPostList extends StatefulWidget {
 
   final String userName;
   final String userImage;
   final String postImage;
   final bool liked;
 
-  const ItemPostList({Key key, this.userName, this.postImage, this.liked, this.userImage}) : super(key: key);
-
+  const ItemPostList(
+      {Key key, this.userName, this.postImage, this.liked, this.userImage})
+      : super(key: key);
 
   @override
+  _ItemPostListState createState() => _ItemPostListState();
+}
+
+class _ItemPostListState extends State<ItemPostList> {
+
+  bool liked;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    liked = widget.liked;
+  }
+  @override
   Widget build(BuildContext context) {
+
+    
+    
     return Column(
       children: [
         Container(
@@ -25,26 +43,39 @@ class ItemPostList extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  userImage),
-                              fit: BoxFit.cover),
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(50)),
+                    Row(
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(widget.userImage),
+                                  fit: BoxFit.cover),
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(50)),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          widget.userName,
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w900),
+                        )
+                      ],
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      userName,
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
-                    )
+
+                    IconButton(
+                      padding: EdgeInsets.zero,
+                      icon: liked == true? Icon(Icons.favorite_border) : Icon(Icons.favorite,color: Colors.red[400],), 
+                      onPressed: (){
+                        setState(() {
+                          liked = !liked;
+                        });
+                      })
                   ],
                 ),
               ),
@@ -52,13 +83,11 @@ class ItemPostList extends StatelessWidget {
                 height: 10,
               ),
               Container(
-                height: 395,
+                height: 375,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(17),
                     image: DecorationImage(
-                        image: NetworkImage(
-                            postImage),
-                        fit: BoxFit.cover)),
+                        image: NetworkImage(widget.postImage), fit: BoxFit.cover)),
               )
             ],
           ),
