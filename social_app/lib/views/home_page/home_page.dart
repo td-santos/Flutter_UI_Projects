@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_app/models/post_model.dart';
 import 'package:social_app/models/user_model.dart';
 import 'package:social_app/views/home_page/components/itemPostList.dart';
 import 'package:social_app/views/home_page/components/itemUserList.dart';
@@ -56,8 +57,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+      body: Container(
+        //physics: NeverScrollableScrollPhysics(),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -87,17 +88,21 @@ class _HomePageState extends State<HomePage> {
                   width: MediaQuery.of(context).size.width - 140,
                   height: MediaQuery.of(context).size.height,
                   child: ListView.builder(
-                      itemCount: 20,
+                      itemCount: listPost.length,
                       itemBuilder: (context, index) {
+                        PostModel postModel = listPost[index];
                         return ItemPostList(
-                          userName: 'Papa F',
-                          userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
-                          postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
+                          userName: postModel.userModel.userFirstName,
+                          userImage: postModel.userModel.urlPhoto,
+                          postImage: postModel.imagePost,
+                          //userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
+                          //postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
                         );
                       }),
                 ),
               ),
-            )
+            ),
+            //SizedBox(height: 200,)
           ],
         ),
       ),
