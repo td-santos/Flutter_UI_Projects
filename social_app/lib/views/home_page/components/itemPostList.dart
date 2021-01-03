@@ -26,9 +26,7 @@ class _ItemPostListState extends State<ItemPostList> {
     liked = widget.liked;
   }
   @override
-  Widget build(BuildContext context) {
-
-    
+  Widget build(BuildContext context) {    
     
     return Column(
       children: [
@@ -82,12 +80,15 @@ class _ItemPostListState extends State<ItemPostList> {
               SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 375,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(17),
-                    image: DecorationImage(
-                        image: NetworkImage(widget.postImage), fit: BoxFit.cover)),
+              Hero(
+                tag: widget.postImage,
+                child: Container(
+                  height: 375,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(17),
+                      image: DecorationImage(
+                          image: NetworkImage(widget.postImage), fit: BoxFit.cover)),
+                ),
               )
             ],
           ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:social_app/models/post_model.dart';
 import 'package:social_app/models/user_model.dart';
+import 'package:social_app/views/comments_page/comments_page.dart';
 import 'package:social_app/views/home_page/components/itemPostList.dart';
 import 'package:social_app/views/home_page/components/itemUserList.dart';
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -91,13 +94,19 @@ class _HomePageState extends State<HomePage> {
                       itemCount: listPost.length,
                       itemBuilder: (context, index) {
                         PostModel postModel = listPost[index];
-                        return ItemPostList(
-                          userName: postModel.userModel.userFirstName,
-                          userImage: postModel.userModel.urlPhoto,
-                          postImage: postModel.imagePost,
-                          liked: postModel.liked,
-                          //userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
-                          //postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
+                        return GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => CommentsPage(postModel: postModel,)));
+                          },
+                          child: ItemPostList(
+                            userName: postModel.userModel.userFirstName,
+                            userImage: postModel.userModel.urlPhoto,
+                            postImage: postModel.imagePost,
+                            liked: postModel.liked,
+                            //userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
+                            //postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
+                          ),
                         );
                       }),
                 ),
