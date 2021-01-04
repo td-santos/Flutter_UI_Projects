@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ItemUserList extends StatelessWidget {
   final String userImage;
@@ -24,7 +25,7 @@ class ItemUserList extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5),
-        Text('${userName}',textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,maxLines: 1,style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),)
+        Text('${userName}',textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,maxLines: 1,style: GoogleFonts.questrial(textStyle: TextStyle(fontSize: 11, fontWeight: FontWeight.w900)),)
       ],
     );
   }

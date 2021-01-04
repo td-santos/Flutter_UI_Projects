@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:social_app/models/post_model.dart';
 import 'package:social_app/models/user_model.dart';
 import 'package:social_app/views/comments_page/comments_page.dart';
@@ -38,25 +40,34 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               'photopost',
-              style: TextStyle(
-                  color: Colors.pink[400],
+              style: GoogleFonts.questrial(
+                textStyle: TextStyle(
+                  color: Colors.pink[400],                  
                   fontSize: 25,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold
+                )
+              ),
             )
           ],
         ),
         actions: [
           IconButton(
-            color: Colors.grey[700],
-            icon: Icon(Icons.search),
+            color: Colors.grey[600],
+            icon: Icon(FontAwesomeIcons.search),
+            //icon: Icon(Icons.search),
             iconSize: 18,
             onPressed: () {},
           ),
-          IconButton(
-            color: Colors.grey[700],
-            icon: Icon(Icons.mail_outline),
-            iconSize: 18,
-            onPressed: () {},
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: IconButton(
+              color: Colors.grey[600],
+              icon: Icon(FontAwesomeIcons.envelope,size: 20,),
+              
+              //icon: Icon(Icons.mail_outline),
+              iconSize: 18,
+              onPressed: () {},
+            ),
           ),
         ],
       ),

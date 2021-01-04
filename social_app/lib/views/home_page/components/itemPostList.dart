@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ItemPostList extends StatefulWidget {
 
@@ -60,8 +61,8 @@ class _ItemPostListState extends State<ItemPostList> {
                         ),
                         Text(
                           widget.userName,
-                          style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w900),
+                          style: GoogleFonts.questrial(textStyle: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w900)),
                         )
                       ],
                     ),
