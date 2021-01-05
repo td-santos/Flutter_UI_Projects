@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_app/views/user_page/user_page.dart';
 
 class ItemPostList extends StatefulWidget {
 
@@ -44,27 +45,32 @@ class _ItemPostListState extends State<ItemPostList> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: NetworkImage(widget.userImage),
-                                  fit: BoxFit.cover),
-                              color: Colors.grey[300],
-                              borderRadius: BorderRadius.circular(50)),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          widget.userName,
-                          style: GoogleFonts.questrial(textStyle: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w900)),
-                        )
-                      ],
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> UserPage()));
+                      },
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(widget.userImage),
+                                    fit: BoxFit.cover),
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(50)),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            widget.userName,
+                            style: GoogleFonts.questrial(textStyle: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.w900)),
+                          )
+                        ],
+                      ),
                     ),
 
                     IconButton(

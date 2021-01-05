@@ -6,6 +6,7 @@ import 'package:social_app/models/user_model.dart';
 import 'package:social_app/views/comments_page/comments_page.dart';
 import 'package:social_app/views/home_page/components/itemPostList.dart';
 import 'package:social_app/views/home_page/components/itemUserList.dart';
+import 'package:social_app/views/post_detail/post_detail.dart';
 
 
 
@@ -107,8 +108,10 @@ class _HomePageState extends State<HomePage> {
                         PostModel postModel = listPost[index];
                         return GestureDetector(
                           onTap: (){
+                            //Navigator.of(context).push(MaterialPageRoute(
+                              //builder: (context) => CommentsPage(postModel: postModel,)));
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CommentsPage(postModel: postModel,)));
+                              builder: (context) => PostDetail()));
                           },
                           child: ItemPostList(
                             userName: postModel.userModel.userFirstName,
