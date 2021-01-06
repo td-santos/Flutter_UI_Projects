@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                             //Navigator.of(context).push(MaterialPageRoute(
                               //builder: (context) => CommentsPage(postModel: postModel,)));
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PostDetail()));
+                              builder: (context) => PostDetail(post: postModel,)));
                           },
                           child: ItemPostList(
                             userName: postModel.userModel.userFirstName,

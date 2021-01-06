@@ -87,15 +87,12 @@ class _ItemPostListState extends State<ItemPostList> {
               SizedBox(
                 height: 10,
               ),
-              Hero(
-                tag: widget.postImage,
-                child: Container(
-                  height: 375,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(17),
-                      image: DecorationImage(
-                          image: NetworkImage(widget.postImage), fit: BoxFit.cover)),
-                ),
+              Container(
+                height: 375,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                    image: DecorationImage(
+                        image: NetworkImage(widget.postImage), fit: BoxFit.cover)),
               )
             ],
           ),
