@@ -90,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) {
                       userModel = listaUsers[index];
                       return ItemUserList(
+                        user: userModel,
                         userName: userModel.userFirstName, //'Papa F',
                         userImage: userModel.urlPhoto//'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
                       );
@@ -118,6 +119,7 @@ class _HomePageState extends State<HomePage> {
                             userImage: postModel.userModel.urlPhoto,
                             postImage: postModel.imagePost,
                             liked: postModel.liked,
+                            postModel: postModel,
                             //userImage: 'https://olhardigital.com.br/wp-content/uploads/2020/12/Papa-Francisco.jpg',
                             //postImage: 'https://ricardohage.com.br/wp-content/uploads/2019/04/fotografia-profissional_0001_paisagem.jpg',
                           ),

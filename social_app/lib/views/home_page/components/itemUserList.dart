@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_app/models/user_model.dart';
 import 'package:social_app/views/user_page/user_page.dart';
 
 class ItemUserList extends StatelessWidget {
   final String userImage;
   final String userName;
+  final UserModel user;
 
-  const ItemUserList({Key key, this.userImage, this.userName}) : super(key: key);
+  const ItemUserList({Key key, this.userImage, this.userName, this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class ItemUserList extends StatelessWidget {
         SizedBox(height: 10),
         GestureDetector(
           onTap: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> UserPage()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> UserPage(user: user,)));
           },
           child: Container(
             height: 50,

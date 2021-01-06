@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_app/models/post_model.dart';
+import 'package:social_app/models/user_model.dart';
 
 class UserPage extends StatelessWidget {
+
+  final UserModel user;
+
+  const UserPage({Key key, this.user}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,13 +47,13 @@ class UserPage extends StatelessWidget {
                               height: 80,
                               width: 80,
                               decoration: BoxDecoration(
-                                  color: Colors.blue[50],
+                                  //color: Colors.blue[50],
                                   borderRadius: BorderRadius.circular(50)),
                               child: Center(
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.network(
-                                      'https://i.imgur.com/yW0v5EP.jpg'),
+                                      user.urlPhoto,fit: BoxFit.cover,),
                                 ),
                               ),
                             ),
@@ -54,7 +61,7 @@ class UserPage extends StatelessWidget {
                               height: 10,
                             ),
                             Text(
-                              'Matheus Ulrick',
+                              '${user.userFirstName} ${user.userLastName}',
                               style: GoogleFonts.questrial(
                                   textStyle: TextStyle(fontSize: 15)),
                             ),
@@ -62,7 +69,7 @@ class UserPage extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              '@ulrick',
+                              '@${user.userLastName.toLowerCase()}',
                               style: GoogleFonts.questrial(
                                   textStyle: TextStyle(fontSize: 12)),
                             ),

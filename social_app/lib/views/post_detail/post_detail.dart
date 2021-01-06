@@ -6,8 +6,8 @@ import 'package:social_app/views/comments_page/comments_page.dart';
 import 'package:social_app/views/user_page/user_page.dart';
 
 class PostDetail extends StatefulWidget {
-  final PostModel post;
 
+  final PostModel post;
   const PostDetail({Key key, this.post}) : super(key: key);
 
   @override
@@ -40,7 +40,7 @@ class _PostDetailState extends State<PostDetail> {
               GestureDetector(
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context)=> UserPage()
+                    builder: (context)=> UserPage(user: widget.post.userModel,)
                   ));
                 },
                 child: Row(

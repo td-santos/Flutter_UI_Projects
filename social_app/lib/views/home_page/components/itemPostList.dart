@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:social_app/models/post_model.dart';
 import 'package:social_app/views/user_page/user_page.dart';
 
 class ItemPostList extends StatefulWidget {
@@ -8,9 +9,10 @@ class ItemPostList extends StatefulWidget {
   final String userImage;
   final String postImage;
   final bool liked;
+  final PostModel postModel;
 
   const ItemPostList(
-      {Key key, this.userName, this.postImage, this.liked, this.userImage})
+      {Key key, this.userName, this.postImage, this.liked, this.userImage, this.postModel})
       : super(key: key);
 
   @override
@@ -47,7 +49,7 @@ class _ItemPostListState extends State<ItemPostList> {
                   children: [
                     GestureDetector(
                       onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> UserPage()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> UserPage(user: widget.postModel.userModel,)));
                       },
                       child: Row(
                         children: [
